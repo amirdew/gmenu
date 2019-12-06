@@ -3,6 +3,7 @@ A redesigned menu for Gmail iOS app, implemented using SwiftUI
 Xcode 11, Swift 5.1
 
 # Preview 
-
-<img src="https://raw.githubusercontent.com/amirdew/gmenu/master/preview.gif" width="375" height="812">
-<img src="https://raw.githubusercontent.com/amirdew/gmenu/master/preview-dark.gif" width="375" height="812">
+<p float="left">
+<img src="https://amir.app/gmenu/preview-dark.gif">
+<img src="https://amir.app/gmenu/preview-light.gif">
+</p>
