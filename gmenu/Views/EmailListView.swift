@@ -37,9 +37,20 @@ struct EmailListView: View {
                     .foregroundColor(Color("text"))
                 ForEach(emails) {
                     EmailView(email: $0)
-                        .padding(.bottom, 10)
+                        .padding(.top, 5)
+                        .padding(.bottom, 5)
+                        .padding(.horizontal, 16)
+                        .contextMenu {
+                            Button(action: {}) {
+                                Text("Delete")
+                                Image(systemName: "trash")
+                            }
+                            Button(action: {}) {
+                                Text("Archive")
+                                Image(systemName: "archivebox")
+                            }
+                    }
                 }
-                .padding(.horizontal, 16)
                 .padding(.top, 16)
             }
         }
