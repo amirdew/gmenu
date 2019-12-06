@@ -39,7 +39,7 @@ struct EmailView: View {
                 
                 Text(email.description)
                     .font(.footnote)
-                    .foregroundColor(Color("text"))
+                    .foregroundColor(Color("text").opacity(0.6))
                     .lineLimit(2)
             }
         }
