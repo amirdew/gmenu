@@ -22,7 +22,7 @@ struct EmailListView: View {
     
     private var title: String {
         Data.Constants.menuItems.first {
-            $0.index == Data.selectedMenuItemIndex
+            $0.isSelected
             }?.title.uppercased() ?? ""
     }
     
@@ -54,7 +54,7 @@ struct EmailListView: View {
                 .padding(.top, 16)
             }
         }
-        .padding(.top, 7 + (self.isMenuOpen ? Data.Constants.menuOpenedSize : Data.Constants.menuClosedSize))
+        .padding(.top, 7 + (self.isMenuOpen ? 200 : 50))
         .animation(animation)
     }
 }

@@ -12,22 +12,20 @@ import UIKit
 struct Data {
     
     struct Constants {
-        static let menuOpenedSize: CGFloat = 315.0
-        static let menuClosedSize: CGFloat = 50.0
         static let menuItems: [MenuItem] =  [
-            MenuItem(index: 0, title: "Inbox", imageName: "inboxIcon", selectedImageName: "inboxIconRed"),
-            MenuItem(index: 1, title: "Starred", imageName: "starIcon", selectedImageName: "starIconRed"),
-            MenuItem(index: 2, title: "Snoozed", imageName: "snoozedIcon", selectedImageName: "snoozedIconRed"),
-            MenuItem(index: 3, title: "Important", imageName: "importantIcon", selectedImageName: "importantIconRed"),
-            MenuItem(index: 4, title: "Sent", imageName: "sentIcon", selectedImageName: "sentIconRed"),
-            MenuItem(index: 5, title: "Scheduled", imageName: "scheduledIcon", selectedImageName: "scheduledIconRed"),
-            MenuItem(index: 6, title: "Drafts", imageName: "draftsIcon", selectedImageName: "draftsIconRed"),
-            MenuItem(index: 7, title: "All emails", imageName: "allEmailsIcon", selectedImageName: "allEmailsIconRed"),
-            MenuItem(index: 8, title: "Spam", imageName: "spamIcon", selectedImageName: "spamIconRed")
+            DefaultMenuItem(title: "Inbox", imageName: "inboxIcon", selectedImageName: "inboxIconRed"),
+            DefaultMenuItem(title: "Starred", imageName: "starIcon", selectedImageName: "starIconRed"),
+            DefaultMenuItem(title: "Snoozed", imageName: "snoozedIcon", selectedImageName: "snoozedIconRed"),
+            DefaultMenuItem(title: "Important", imageName: "importantIcon", selectedImageName: "importantIconRed"),
+            DefaultMenuItem(title: "Sent", imageName: "sentIcon", selectedImageName: "sentIconRed"),
+            DefaultMenuItem(title: "Scheduled", imageName: "scheduledIcon", selectedImageName: "scheduledIconRed"),
+            DefaultMenuItem(title: "Drafts", imageName: "draftsIcon", selectedImageName: "draftsIconRed"),
+            DefaultMenuItem(title: "All emails", imageName: "allEmailsIcon", selectedImageName: "allEmailsIconRed"),
+            DefaultMenuItem(title: "Spam", imageName: "spamIcon", selectedImageName: "spamIconRed")
         ]
     }
     
-    static var selectedMenuItemIndex: Int = 0
+    static var selectedMenuItemId: String = Constants.menuItems.first!.id
     
     static var emails: [Email] {
         [
@@ -96,9 +94,13 @@ struct Data {
 }
 
 
-extension MenuItem {
+extension DefaultMenuItem {
     
     var isSelected: Bool {
-        Data.selectedMenuItemIndex == index
+        Data.selectedMenuItemId == id
+    }
+    
+    func setSelected() {
+        Data.selectedMenuItemId = id
     }
 }

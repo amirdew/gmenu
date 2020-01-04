@@ -20,6 +20,8 @@
 		29B12F5723916C3700B0063E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B12F5523916C3700B0063E /* LaunchScreen.storyboard */; };
 		29F9881B2392AB970058CDE3 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9881A2392AB970058CDE3 /* EmailView.swift */; };
 		29F9881F2392B1830058CDE3 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F9881E2392B1830058CDE3 /* MenuItemView.swift */; };
+		ABB1B59D23BE7EB0007C9A3F /* Array+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1B59C23BE7EB0007C9A3F /* Array+Utilities.swift */; };
+		ABBBD11B23C13C4F003F2677 /* DefaultMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBD11A23C13C4F003F2677 /* DefaultMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		29B12F5823916C3700B0063E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29F9881A2392AB970058CDE3 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		29F9881E2392B1830058CDE3 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		ABB1B59C23BE7EB0007C9A3F /* Array+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utilities.swift"; sourceTree = "<group>"; };
+		ABBBD11A23C13C4F003F2677 /* DefaultMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				29B12F4E23916C3600B0063E /* ContentView.swift */,
-				29F9881E2392B1830058CDE3 /* MenuItemView.swift */,
-				293F6CA72393C7BF0071D4DE /* MenuBarView.swift */,
 				29F9881A2392AB970058CDE3 /* EmailView.swift */,
 				293F6CA92393CADE0071D4DE /* EmailListView.swift */,
 			);
@@ -68,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				29749D102393050D00602CC3 /* Data.swift */,
-				29749D0E2393040D00602CC3 /* MenuItem.swift */,
 				29749D122393054000602CC3 /* Email.swift */,
 			);
 			path = Models;
@@ -94,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				293F6CA62393C6190071D4DE /* gmenu.entitlements */,
+				ABBBD11923C13B2E003F2677 /* Lib */,
 				29749D0D239303FA00602CC3 /* Models */,
 				29749D0C239303F400602CC3 /* Views */,
 				29B12F4A23916C3600B0063E /* AppDelegate.swift */,
@@ -113,6 +115,42 @@
 				29B12F5323916C3700B0063E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABB1B59B23BE7E91007C9A3F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1B59C23BE7EB0007C9A3F /* Array+Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ABBBD11923C13B2E003F2677 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				ABBBD11D23C13CA5003F2677 /* Views */,
+				ABBBD11C23C13C9A003F2677 /* Models */,
+				ABB1B59B23BE7E91007C9A3F /* Utilities */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		ABBBD11C23C13C9A003F2677 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29749D0E2393040D00602CC3 /* MenuItem.swift */,
+				ABBBD11A23C13C4F003F2677 /* DefaultMenuItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABBBD11D23C13CA5003F2677 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				293F6CA72393C7BF0071D4DE /* MenuBarView.swift */,
+				29F9881E2392B1830058CDE3 /* MenuItemView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,12 +226,14 @@
 			files = (
 				293F6CA82393C7BF0071D4DE /* MenuBarView.swift in Sources */,
 				293F6CAA2393CADE0071D4DE /* EmailListView.swift in Sources */,
+				ABB1B59D23BE7EB0007C9A3F /* Array+Utilities.swift in Sources */,
 				29749D112393050D00602CC3 /* Data.swift in Sources */,
 				29B12F4B23916C3600B0063E /* AppDelegate.swift in Sources */,
 				29F9881B2392AB970058CDE3 /* EmailView.swift in Sources */,
 				29B12F4D23916C3600B0063E /* SceneDelegate.swift in Sources */,
 				29749D0F2393040D00602CC3 /* MenuItem.swift in Sources */,
 				29B12F4F23916C3600B0063E /* ContentView.swift in Sources */,
+				ABBBD11B23C13C4F003F2677 /* DefaultMenuItem.swift in Sources */,
 				29749D132393054000602CC3 /* Email.swift in Sources */,
 				29F9881F2392B1830058CDE3 /* MenuItemView.swift in Sources */,
 			);

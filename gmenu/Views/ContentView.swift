@@ -28,8 +28,26 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture { self.toggleMenu() }
             
-            MenuBarView(isOpen: isMenuOpen, menuItems: menuItems) {
-                self.toggleMenu()
+            MenuBarView(
+                isOpen: isMenuOpen,
+                menuItems: menuItems,
+                onToggle: {
+                    self.toggleMenu()
+            }) {
+                HStack {
+                    Text("Search email")
+                        .foregroundColor(Color("text"))
+                        .scaleEffect(x: self.isMenuOpen ? 0 : 1, y: self.isMenuOpen ? 0 : 1)
+                    Spacer()
+                    Image("profile")
+                        .padding(.top, 10)
+                        .scaleEffect(x: self.isMenuOpen ? 0 : 1, y: self.isMenuOpen ? 0 : 1)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                }
+                .frame(maxHeight: .infinity, alignment: .top)
+                .padding(.leading, 56)
+                .padding(.trailing, 12)
+                .opacity(self.isMenuOpen ? 0 : 1)
             }
         }
     }
@@ -57,7 +75,7 @@ struct ContentView_Previews: PreviewProvider {
             ),
             
             menuItems: .init(
-                repeating: MenuItem(index: 0, title: "Inbox", imageName: "inboxIcon", selectedImageName: "inboxIconRed"),
+                repeating: DefaultMenuItem(title: "Inbox", imageName: "inboxIcon", selectedImageName: "inboxIconRed"),
                 count: 9
             )
         )

@@ -10,17 +10,18 @@ import SwiftUI
 
 struct MenuItemView: View {
     
+    var index: Int
     var item: MenuItem
     var isExpanded: Bool = true
-    var width: CGFloat = 90
-    var height: CGFloat = 70
+    var width: CGFloat
+    var height: CGFloat
     var onTap: (() -> Void)? = nil
     
     private var animationIn: Animation {
         Animation
-            .spring(dampingFraction: 0.7)
+            .spring(dampingFraction: 0.6)
             .speed(1.5)
-            .delay(0.01 * Double(item.index))
+            .delay(0.02 * Double(index))
     }
     
     private var animationOut: Animation {
@@ -66,10 +67,12 @@ private extension Font {
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
         MenuItemView(
-            item: MenuItem(index: 0,
-                           title: "Inbox",
+            index: 0,
+            item: DefaultMenuItem(title: "Inbox",
                            imageName: "inboxIcon",
-                           selectedImageName: "inboxIconRed")
+                           selectedImageName: "inboxIconRed"),
+            width: 90,
+            height: 70
         )
     }
 }
